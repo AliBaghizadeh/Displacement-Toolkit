@@ -198,8 +198,8 @@ displacement_toolkit/
 │   ├── image_preparation_patching.py
 │   └── batch_patchify_resize.py
 ├── notebooks/
-│   ├── example_notebooks.ipynb
-│   └── example_notebooks_test.ipynb
+│   ├── example_notebooks_ABO3.ipynb
+│   └── example_notebooks_ferroelectric.ipynb
 ├── tests/
 │   └── (test files)
 ├── requirements.txt
