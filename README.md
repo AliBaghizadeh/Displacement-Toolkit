@@ -215,7 +215,6 @@ displacement_toolkit/
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
-└── setup.py
 ```
 
 ## Contributing
