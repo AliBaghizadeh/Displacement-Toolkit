@@ -6,8 +6,8 @@ Atomic-resolution electron microscopy produces images rich with pixel-level info
 Instead, it is often more effective to distill the image into patterns that highlight the *displacement* of atoms from their regular lattice positions, rather than analyzing the full image pixel by pixel.
 
 The central aim of `displacement_toolkit` is to:
-- **Detect atomic peaks**: You can fine tune the peak detection parameters on selected images and use batch conversion to extract peaks of thousands of images.
-- **Map displacements from a regular lattice**
+- **Detect atomic peaks**: You can fine-tune the peak detection parameters on selected images and use batch conversion to extract peaks of thousands of images.
+- **Map displacements from a regular lattice**: Using the Sobel operator, images can be easily converted to displacement maps. It does not perform peak finding.
 - **Create displacement maps**: images that reflect only deviations from perfect periodicity, which may represent defects, local symmetries, or physical effects in the material.
 
 Displacement maps thus provide a robust representation of the “interesting” features in atomic-scale images. They are less sensitive to noise, contrast, or brightness changes, and help abstract away irrelevant information.
