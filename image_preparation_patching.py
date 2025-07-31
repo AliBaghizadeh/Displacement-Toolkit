@@ -47,25 +47,42 @@ def load_image(path):
     return np.array(img)
 
 
-def create_patches(image, patch_size=PATCH_SIZE, stride=STRIDE):
+def create_patches(
+    image,
+    patch_size=256,
+    stride=128,
+    save_dir=None,
+    base_name="image"
+):
     """
-    Extract overlapping patches from a 2D image.
+    Extract overlapping patches from a 2D image, optionally save each patch as PNG.
 
     Parameters
     ----------
     image : np.ndarray
-        2D array (grayscale image).
+        2D grayscale image.
     patch_size : int, optional
-        Size of square patches (default: PATCH_SIZE).
+        Size of square patches (default: 256).
     stride : int, optional
-        Stride or step size between patch starts (default: STRIDE).
+        Stride or step size (default: 128).
+    save_dir : str, optional
+        If provided, each patch will be saved as a PNG in this directory.
+    base_name : str, optional
+        Used as prefix for saved patch files.
 
     Returns
     -------
     patches : np.ndarray
         Array of shape (n_patches, patch_size, patch_size).
     """
-    return patchify(image, (patch_size, patch_size), step=stride).reshape(-1, patch_size, patch_size)
+    patches = patchify(image, (patch_size, patch_size), step=stride).reshape(-1, patch_size, patch_size)
+    if save_dir:
+        os.makedirs(save_dir, exist_ok=True)
+        for i, patch in enumerate(patches):
+            out_name = f"{base_name}_patch_{i:03d}.png"
+            Image.fromarray(patch.astype(np.uint8)).save(os.path.join(save_dir, out_name))
+        print(f"Saved {len(patches)} patches to {save_dir}")
+    return patches
 
 
 def crop_to_patchable(image, patch_size=PATCH_SIZE, stride=STRIDE):
