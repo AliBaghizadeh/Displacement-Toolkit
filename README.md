@@ -104,7 +104,6 @@ Whether you’re working on STEM, TEM, or related images, this toolkit helps you
 
 Here’s a minimal example to extract atomic peaks and compute displacement:
 
-
 ```bash
 import numpy as np
 from PIL import Image
@@ -112,7 +111,6 @@ from displacement_toolkit.peaks import find_peaks, fit_lattice, compute_displace
 from displacement_toolkit.visualization
 import overlay_peaks_on_image 
 ```
-
 ### Load grayscale microscopy image
 ```bash
 img = Image.open('path/to/image.tif').convert('L')
@@ -137,13 +135,11 @@ overlay_peaks_on_image(img_np, peaks, color='r', marker='o', markersize=5)
 ```bash
 overlay_peaks_on_image(img_np, peaks, color='r', marker='o', markersize=5)
 ```
-
-Batch patch an entire folder:
-
+### Batch patch an entire folder:
 ```bash
 from displacement_toolkit.patching import batch_patchify_and_resize
-```
 batch_patchify_and_resize('input_images/', 'output_patches/', patch_size=128, out_size=256, overlap=16)
+```
 
 ## Modules
 
