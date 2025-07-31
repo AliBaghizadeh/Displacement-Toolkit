@@ -93,27 +93,23 @@ Here’s a minimal example to extract atomic peaks and compute displacement:
 <pre> ```python import numpy as np from PIL import Image from displacement_toolkit.peaks import find_peaks, fit_lattice, compute_displacements from displacement_toolkit.visualization import overlay_peaks_on_image # Load grayscale microscopy image img = Image.open('path/to/image.tif').convert('L') img_np = np.array(img) # Detect atomic peaks peaks = find_peaks(img_np, sigma=2, min_distance=6, threshold_abs=40) # Fit lattice and compute displacements i, j, lattice_func = fit_lattice(peaks, img_np.shape) if lattice_func is not None: displacements = compute_displacements(peaks, i, j, lattice_func) # Analyze or visualize as needed # Overlay peaks on image overlay_peaks_on_image(img_np, peaks, color='r', marker='o', markersize=5) ``` </pre>
 
 
-# Load grayscale microscopy image
+### Load grayscale microscopy image
 img = Image.open('path/to/image.tif').convert('L')
 img_np = np.array(img)
 
-# Detect atomic peaks
+### Detect atomic peaks
 peaks = find_peaks(img_np, sigma=2, min_distance=6, threshold_abs=40)
 
-# Fit lattice and compute displacements
+### Fit lattice and compute displacements
 i, j, lattice_func = fit_lattice(peaks, img_np.shape)
 if lattice_func is not None:
     displacements = compute_displacements(peaks, i, j, lattice_func)
     # Analyze or visualize as needed
 
-# Overlay peaks on image
+### Overlay peaks on image
 overlay_peaks_on_image(img_np, peaks, color='r', marker='o', markersize=5)
 
-
-# Overlay peaks on image
-overlay_peaks_on_image(img_np, peaks, color='r', marker='o', markersize=5)
-
-# Visualize
+### Visualize
 overlay_peaks_on_image(img_np, peaks, color='r', marker='o', markersize=5)
 
 
