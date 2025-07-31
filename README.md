@@ -171,7 +171,7 @@ batch_patchify_and_resize('input_images/', 'output_patches/', patch_size=128, ou
 
 ## Example Notebooks
 
-See `notebooks/example_notebooks.ipynb` and `example_notebooks_test.ipynb` for live, annotated examples:
+See `notebooks/example_notebooks_ABO3.ipynb` and `example_notebooks_ferroelectric.ipynb` for live, annotated examples:
 - End-to-end atomic displacement mapping.
 - Parameter tuning and visualization.
 - Batch patch generation for ML datasets.
@@ -210,8 +210,8 @@ displacement_toolkit/
 ├── notebooks/
 │   ├── example_notebooks_ABO3.ipynb
 │   └── example_notebooks_ferroelectric.ipynb
-├── tests/
-│   └── (test files)
+├── example_images/
+│   └── test images of different materials
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
