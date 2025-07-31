@@ -64,7 +64,7 @@ Whether you’re working on STEM, TEM, or related images, this toolkit helps you
 - **Fit 2D lattices** and quantify displacements.
 - **Visualize displacement fields** and overlay results on original images.
 - **Extract image patches** for training ML models.
-- Batch process entire folders of images with a single call.
+- **Batch process** entire folders of images with a single call.
 
 ---
 
