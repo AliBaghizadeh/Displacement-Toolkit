@@ -127,9 +127,8 @@ peaks = find_peaks(img_np, sigma=2, min_distance=6, threshold_abs=40)
 i, j, lattice_func = fit_lattice(peaks, img_np.shape)
 if lattice_func is not None:
     displacements = compute_displacements(peaks, i, j, lattice_func)
-    # Analyze or visualize as needed
 ```
-
+### Analyze or visualize as needed
 ### Overlay peaks on image
 ```bash
 overlay_peaks_on_image(img_np, peaks, color='r', marker='o', markersize=5)
