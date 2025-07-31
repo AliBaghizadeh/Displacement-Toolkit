@@ -94,30 +94,36 @@ Here’s a minimal example to extract atomic peaks and compute displacement:
 
 
 ### Load grayscale microscopy image
+```bash
 img = Image.open('path/to/image.tif').convert('L')
 img_np = np.array(img)
-
+```
 ### Detect atomic peaks
+```bash
 peaks = find_peaks(img_np, sigma=2, min_distance=6, threshold_abs=40)
-
+```
 ### Fit lattice and compute displacements
+```bash
 i, j, lattice_func = fit_lattice(peaks, img_np.shape)
 if lattice_func is not None:
     displacements = compute_displacements(peaks, i, j, lattice_func)
     # Analyze or visualize as needed
+```
 
 ### Overlay peaks on image
+```bash
 overlay_peaks_on_image(img_np, peaks, color='r', marker='o', markersize=5)
-
+```
 ### Visualize
+```bash
 overlay_peaks_on_image(img_np, peaks, color='r', marker='o', markersize=5)
-
+```
 
 Batch patch an entire folder:
 
-```python
+```bash
 from displacement_toolkit.patching import batch_patchify_and_resize
-
+```
 batch_patchify_and_resize('input_images/', 'output_patches/', patch_size=128, out_size=256, overlap=16)
 
 ## Modules
@@ -173,7 +179,7 @@ All required packages are listed in `requirements.txt`. Key libraries:
 Install with:
 ```bash
 pip install -r requirements.txt
-
+```
 
 ## Repository Structure
 ```
