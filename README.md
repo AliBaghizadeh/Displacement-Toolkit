@@ -72,7 +72,7 @@ Whether you’re working on STEM, TEM, or related images, this toolkit helps you
 
 - **Peak Detection**: Fast and customizable peak finding using Gaussian filtering and local maxima search.
 - **Lattice Fitting**: PCA-based 2D lattice fitting for accurate displacement measurements.
-- **Displacement Mapping**: Compute and interpolate signed or unsigned displacement maps.
+- **Displacement Mapping**: Compute and interpolate signed or unsigned displacement maps using the Sobel operator.
 - **Image Patching**: Flexible patch extraction, resizing, and batch-saving utilities.
 - **Visualization Tools**: Functions for overlaying peaks/displacements and creating parameter sweeps.
 - **Batch Processing**: Directory-level workflows for both patching and displacement mapping.
