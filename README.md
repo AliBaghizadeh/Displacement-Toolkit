@@ -1,5 +1,7 @@
 # displacement_toolkit
 
+![Workflow figure](example_images/displacement_toolkit.png)
+
 **A Python toolkit for atomic displacement analysis and image patching in microscopy.**
 
 Atomic-resolution electron microscopy produces images rich with pixel-level information—often more than needed for scientific analysis. For example, if only a single atomic plane contains defects while the rest show regular periodic structure, analyzing every pixel (e.g., all 512x512 pixels in an image) is computationally excessive and may obscure the features of interest.
