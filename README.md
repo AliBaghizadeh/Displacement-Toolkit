@@ -6,11 +6,27 @@ Atomic-resolution electron microscopy produces images rich with pixel-level info
 Instead, it is often more effective to distill the image into patterns that highlight the *displacement* of atoms from their regular lattice positions, rather than analyzing the full image pixel by pixel.
 
 The central aim of `displacement_toolkit` is to:
-- **Detect atomic peaks**
+- **Detect atomic peaks**: You can fine tune the peak detection parameters on selected images and use batch conversion to extract peaks of thousands of images.
 - **Map displacements from a regular lattice**
 - **Create displacement maps**: images that reflect only deviations from perfect periodicity, which may represent defects, local symmetries, or physical effects in the material.
 
 Displacement maps thus provide a robust representation of the “interesting” features in atomic-scale images. They are less sensitive to noise, contrast, or brightness changes, and help abstract away irrelevant information.
+
+## Methodologies
+
+`displacement_toolkit` implements two complementary approaches for atomic displacement analysis:
+
+1. **Gradient-Based Displacement Maps**
+   - Uses image gradients (e.g., Sobel operators) to compute continuous displacement fields directly from the image intensity.
+   - Fast, robust to noise, and does not require explicit peak detection.
+   - Well-suited for visualization of general atomic plane shifts or periodic structures.
+
+2. **Peak Finding and Lattice Fitting**
+   - Detects atomic positions as local maxima ("peaks") in the image.
+   - Fits a 2D lattice (using PCA and least squares) to model the ideal atomic positions.
+   - Computes the displacements of each atom from the fitted lattice, providing a direct measure of local defects or deformations.
+
+Both approaches can be used independently or together, depending on your application and the quality of your microscopy data.
 
 ## Why patch images?
 
@@ -23,7 +39,6 @@ If your dataset has images with different atomic densities or sizes, patching an
 
 **In summary:**  
 Effortlessly extract peaks, fit lattices, compute displacement fields, and patch microscopy images for machine learning or quantitative analysis.
-
 
 ---
 
